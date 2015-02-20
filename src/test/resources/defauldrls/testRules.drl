@@ -1,0 +1,44 @@
+package com.plugtree.training.example.defaultkiesession
+
+import com.sura.seguros.core.modelo.*
+
+rule "Regla 1"
+ when
+ 	 $n: Negociovida()
+ then
+ 	 System.out.println($n.toString());
+end
+
+rule "Riesgo Automovil"
+	when
+		$n: Negociovida($riesgos: riesgos )
+		$a: Automovil( ) from $riesgos
+	then
+		System.out.println("==> riesgos.automovil: "+$a);
+end
+
+rule "Riesgo Persona"
+	when
+		$n: Negociovida($riesgos: riesgos )
+		$p: Persona( ) from $riesgos
+	then
+		System.out.println("==> riesgos.persona: "+$p);
+end
+
+rule "Riesgos"
+	when
+		$n: Negociovida($riesgos: riesgos )
+		$r: Riesgo( ) from $riesgos
+	then
+		System.out.println("==> riesgos: "+$r);
+end
+
+rule "CoberturaRobo"
+	when
+		$n: Negociovida($riesgos: riesgos )
+		$a: Automovil($coberturas: coberturas ) from $riesgos
+		$c: Coberturarobo( ) from $coberturas
+	then
+		System.out.println("====> coberturas: "+$c);
+end
+ 

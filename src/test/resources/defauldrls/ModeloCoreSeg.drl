@@ -1,0 +1,42 @@
+package com.sura.seguros.core.modelo
+
+declare Negociovida
+ idPlan:String;
+ riesgos: java.util.List
+ direccion: Direccion
+ numeros: java.util.List
+ letras: java.util.List
+end
+
+declare Automovil extends Riesgo
+ placa: String
+end
+
+declare Persona extends Riesgo
+ cedula: String
+end 
+
+
+declare Riesgo
+ idRiesgo: String
+ direccion: Direccion
+ coberturas: java.util.List
+end
+
+declare Direccion
+ carrera: String
+end
+
+declare Cobertura 
+ valorAsegurado: Double
+end 
+ 
+
+declare Coberturarobo extends Cobertura
+	tipo: String
+	direccion: Direccion
+end
+
+declare Coberturavida extends Cobertura
+	idPersona: String
+end

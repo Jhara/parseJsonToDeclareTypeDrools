@@ -1,0 +1,38 @@
+{
+  "Negociovida": {
+    "numeros": [ 1, 2, 3  ],
+    "letras": [ "a", "b", "c" ],
+    "direccion": { "carrera": "carrera 38" },
+    "idPlan": "plan 1",
+    "riesgos": [
+      {
+        "automovil": {
+          "placa": "XXX123",
+          "coberturas": [
+            {
+              "coberturaRobo": {
+                "tipo": "mano armada",
+                "direccion": { "carrera": "carrera 39" }
+              },
+              "coberturaVida": {
+                "idPersona": "C1234"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "persona": {
+          "cedula": "C123",
+          "coberturas": [
+            {
+              "coberturaVida": {
+                "idPersona": "C123"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
